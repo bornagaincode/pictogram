@@ -1,0 +1,14 @@
+<% if @upload %>
+  <% if @upload.image.representable? %>
+    <%= image_tag @upload.image.representation(resize_to_limit: [500, 500]) %>
+  <% else %>
+    The file you have uploaded is not an image.
+  <% end %>
+<% else %>
+  No uploads to display
+<% end %>
+
+<%= form_for @new_upload do |form| %>
+  <%= form.file_field :image %>
+  <%= form.submit "submit" %>
+<% end %>
