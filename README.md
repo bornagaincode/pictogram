@@ -1,24 +1,14 @@
-# README
+# Pictogram
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Self hosted photography website inspired by Instagram
 
-Things you may want to cover:
 
-* Ruby version
+### How to get started
 
-* System dependencies
+This project is currently an empty Rails 6.1.1 application. If you have nothing to do, simply run the following code to get started:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+bundle install
+rails webpacker:install
+rails start
+```
