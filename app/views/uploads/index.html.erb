@@ -1,6 +1,6 @@
 <% if @upload %>
   <% if @upload.image.representable? %>
-    <%= image_tag @upload.image.representation(resize_to_limit: [500, 500]) %>
+    <%= render_image(@upload) %>
   <% else %>
     The file you have uploaded is not an image.
   <% end %>
