@@ -1,7 +1,7 @@
 class UploadsController < ApplicationController
   def index
     @new_upload = Upload.new
-    @upload = Upload.last
+    @uploads = Upload.all
   end
 
   def create

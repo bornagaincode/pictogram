@@ -1,14 +1,18 @@
-<% if @upload %>
-  <% if @upload.image.representable? %>
-    <%= render_image(@upload) %>
-  <% else %>
-    The file you have uploaded is not an image.
-  <% end %>
-<% else %>
-  No uploads to display
-<% end %>
-
 <%= form_for @new_upload do |form| %>
   <%= form.file_field :image %>
   <%= form.submit "submit" %>
+<% end %>
+
+<br />
+
+<% @uploads.each do |upload| %>
+  <% if upload.image.representable? %>
+    <%= render_image(upload) %>
+    <br />
+  <% else %>
+    The file you have uploaded is not an image.
+  <% end %>
+<% end %>
+<% if @uploads.empty? %>
+  No uploads to display
 <% end %>
