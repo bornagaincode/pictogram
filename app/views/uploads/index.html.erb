@@ -1,6 +1,7 @@
 <%= form_for @new_upload do |form| %>
-  <%= form.file_field :image %>
-  <%= form.submit "submit" %>
+  <%= form.file_field :image %><br /><br />
+  <%= form.text_area :text %><br /><br />
+  <%= form.submit "upload image" %>
 <% end %>
 
 <br />
@@ -8,6 +9,7 @@
 <% @uploads.each do |upload| %>
   <% if upload.image.representable? %>
     <%= render_image(upload) %>
+    <p><%= upload.text %></p>
     <br />
   <% else %>
     The file you have uploaded is not an image.

@@ -5,14 +5,18 @@ class UploadsController < ApplicationController
   end
 
   def create
-    upload = Upload.create(upload_params)
+    upload = Upload.new(upload_params)
 
-    redirect_to root_path
+    if upload.save
+      redirect_to root_path
+    else
+      redirect_to root_path, notice: upload.errors.full_messages[0]
+    end
   end
 
   private
 
   def upload_params
-    params.require(:upload).permit(:image)
+    params.require(:upload).permit(:image, :text)
   end
 end
