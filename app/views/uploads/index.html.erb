@@ -1,6 +1,6 @@
 <%= form_for @new_upload do |form| %>
-  <%= form.file_field :image %><br /><br />
-  <%= form.text_area :text %><br /><br />
+  <%= form.file_field :image %>
+  <%= form.text_area :text, placeholder: "Enter some text..." %>
   <%= form.submit "upload image" %>
 <% end %>
 
