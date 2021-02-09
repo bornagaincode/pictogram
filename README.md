@@ -10,5 +10,8 @@ This project is currently an empty Rails 6.1.1 application. If you have nothing 
 ```
 bundle install
 rails webpacker:install
+rails db:create
+rails db:migrate
 rails start
 ```
+
