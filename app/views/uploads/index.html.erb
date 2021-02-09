@@ -1,20 +1,31 @@
-<%= form_for @new_upload do |form| %>
-  <%= form.file_field :image %>
-  <%= form.text_area :text, placeholder: "Enter some text..." %>
-  <%= form.submit "upload image" %>
-<% end %>
+<article>
+  <section id="upload-form">
+    <%= form_for @new_upload do |form| %>
+      <%= form.file_field :image %>
+      <%= form.text_area :text, placeholder: "Enter some text..." %>
+      <%= form.submit "upload image" %>
+    <% end %>
+  </section>
 
-<br />
-
-<% @uploads.each do |upload| %>
-  <% if upload.image.representable? %>
-    <%= render_image(upload) %>
-    <p><%= upload.text %></p>
-    <br />
-  <% else %>
-    The file you have uploaded is not an image.
+  <% @uploads.each do |upload| %>
+    <% if upload.image.representable? %>
+      <section>
+        <figure>
+          <%= render_image(upload) %>
+          <figcaption>
+            <p><%= upload.text %></p>
+          </figcaption>
+        </figure>
+      </section>
+    <% else %>
+      <p>The file you have uploaded is not an image.</p>
+    <% end %>
   <% end %>
-<% end %>
-<% if @uploads.empty? %>
-  No uploads to display
-<% end %>
+  <% if @uploads.empty? %>
+    <section>
+      <p>
+        No uploads to display
+      </p>
+    </section>
+  <% end %>
+</article>
