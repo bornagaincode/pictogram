@@ -20,8 +20,13 @@
         <% if upload.image.representable? %>
           <div class="card upload-card">
             <%= render_image(upload, class: 'card-image img-responsive') %>
-            <div class="card-footer">
-              <div class="card-subtitle"><%= upload.text %></div>
+            <div class="card-header">
+              <div class="card-title h5">
+                <%= upload.text %>
+              </div>
+              <div class="card-subtitle text-gray">
+                Posted <%= time_ago_in_words(upload.created_at) %> ago
+              </div>
             </div>
           </div>
         <% else %>

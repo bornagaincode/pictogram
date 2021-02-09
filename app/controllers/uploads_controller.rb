@@ -10,7 +10,7 @@ class UploadsController < ApplicationController
     if upload.save
       redirect_to root_path
     else
-      redirect_to root_path, notice: upload.errors.full_messages[0]
+      redirect_to root_path, flash: { error: upload.errors.full_messages[0] }
     end
   end
 
