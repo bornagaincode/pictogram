@@ -20,13 +20,24 @@
         <% if upload.image.representable? %>
           <div class="card upload-card">
             <%= render_image(upload, class: 'card-image img-responsive') %>
+            <% if upload.text.present? %>
             <div class="card-header">
               <div class="card-title h5">
                 <%= upload.text %>
               </div>
-              <div class="card-subtitle text-gray">
-                Posted <%= time_ago_in_words(upload.created_at) %> ago
-              </div>
+            </div>
+            <% end %>
+            <% if upload.exif.any? %>
+            <div class="card-body">
+              <% upload.exif.each do |entry, value| %>
+                <span class="exif-data exif-<%= entry %>">
+                  <strong><%= entry.to_s.humanize %>:</strong> <%= value %>
+                </span>
+              <% end %>
+            </div>
+            <% end %>
+            <div class="card-footer text-gray">
+              Posted <%= time_ago_in_words(upload.created_at) %> ago
             </div>
           </div>
         <% else %>

@@ -14,3 +14,21 @@
   box-shadow: 0 5px 20px rgba(#444, 0.15);
   margin-bottom: 20px;
 }
+
+.exif-data {
+  margin-right: 5px;
+}
+
+.exif-data strong {
+  color: #777;
+}
+
+.exif-data:not(:last-child):after {
+  content: '/';
+  margin-left: 5px;
+  color: #ccc;
+}
+
+.exif-iso {
+  text-transform: uppercase;
+}
