@@ -4,7 +4,6 @@ Self hosted photography website inspired by Instagram
 
 
 ### Requires
-- [libexif](https://libexif.github.io/)
 - [ImageMagick](https://imagemagick.org/)
 
 
