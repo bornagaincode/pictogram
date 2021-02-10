@@ -4,4 +4,10 @@ class Upload < ApplicationRecord
   has_one_attached :image
 
   validates :image, attached: true, content_type: /\Aimage\/.*\z/
+
+  def exif
+    return unless image.image?
+
+    @exif ||= Exif::Data.new(self.image.download)
+  end
 end
