@@ -9,7 +9,7 @@ class Upload < ApplicationRecord
     return {} unless image.image?
 
     {
-      camera: camera,
+      camera: camera_name,
       lens: image.metadata[:lens_model],
       focal_length: image.metadata[:focal_length],
       exposure_time: image.metadata[:exposure_time],
@@ -21,7 +21,7 @@ class Upload < ApplicationRecord
 
   private
 
-  def camera
+  def camera_name
     return nil unless image.metadata[:make]
     return image.metadata[:make] unless image.metadata[:model]
 
