@@ -2,6 +2,8 @@
 
 Self hosted photography website inspired by Instagram
 
+NOTE: I'm archiving this project for the time being.
+
 
 ### Requires
 - [ImageMagick](https://imagemagick.org/)
